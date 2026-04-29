@@ -108,6 +108,7 @@
   <a href="#transport" id="navTransport">المواصلات</a>
   <a href="#education" id="navEducation">تعلم الإنجليزية</a>
   <a href="#contact" id="navContact">اتصل بنا</a>
+  <a href="instructions.html" id="navLaptop">استخدام الحاسوب</a>
 </nav>
 
 <div class="container">
@@ -164,6 +165,18 @@
     </ul>
   </section>
 
+  <section id="laptop" class="card">
+    <h2 id="laptopTitle">كيفية استخدام الحاسوب</h2>
+    <ul id="laptopList">
+      <li>تشغيل الحاسوب بالضغط على زر الطاقة</li>
+      <li>استخدام الفأرة لتحريك المؤشر والنقر</li>
+      <li>فتح الإنترنت باستخدام المتصفح (مثل Chrome)</li>
+      <li>استخدام لوحة المفاتيح للكتابة</li>
+      <li>إيقاف التشغيل من قائمة "Start"</li>
+      <a href="instructions.html" id="navLaptop">استخدام الحاسوب</a>
+    </ul>
+  </section>
+
   <section id="contact" class="card">
     <h2 id="contactTitle">اتصل بنا</h2>
     <p id="contactText">إذا كنتم بحاجة إلى مساعدة، يرجى التواصل مع المنظمات المحلية أو مراكز الدعم.</p>
@@ -195,6 +208,7 @@ function toggleLanguage() {
     document.getElementById('navTransport').innerText = "Transport";
     document.getElementById('navEducation').innerText = "Learn English";
     document.getElementById('navContact').innerText = "Contact";
+    document.getElementById('navLaptop').innerText = "Using a Laptop";
 
     document.getElementById('homeTitle').innerText = "General Information";
     document.getElementById('homeText').innerText = "Welcome to Portlaoise. This page helps you understand daily life, services available, and how to adapt.";
@@ -221,6 +235,15 @@ function toggleLanguage() {
       <li>Use apps to find places and services</li>
       <li>Learn basic English</li>
       <li>Respect local laws</li>
+    `;
+
+    document.getElementById('laptopTitle').innerText = "How to use a laptop";
+    document.getElementById('laptopList').innerHTML = `
+      <li>Turn on the laptop by pressing the power button</li>
+      <li>Use the mouse or touchpad to move the cursor</li>
+      <li>Open the internet using a browser (like Chrome)</li>
+      <li>Use the keyboard to type</li>
+      <li>Shut down from the Start menu</li>
     `;
 
     document.getElementById('contactTitle').innerText = "Contact";
