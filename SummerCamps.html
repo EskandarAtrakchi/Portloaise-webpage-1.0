@@ -79,6 +79,14 @@
       margin-top: 5px;
     }
 
+    .map-btn {
+      margin-top: 10px;
+      width: 100%;
+      background: #2c7be5;
+      color: white;
+      border: none;
+    }
+
     footer {
       text-align: center;
       padding: 20px;
@@ -100,7 +108,7 @@
 
     .modal-content {
       background: white;
-      width: 90%;
+      width: 95%;
       max-width: 900px;
       height: 80%;
       margin: 5% auto;
@@ -155,7 +163,6 @@
     <div style="display:flex; gap:10px; flex-wrap:wrap;">
       <button onclick="setLanguage('en')">English</button>
       <button onclick="setLanguage('ar')">العربية</button>
-      <button onclick="openMap()">📍 Map</button>
     </div>
   </div>
 
@@ -164,21 +171,17 @@
 </div>
 
 <footer id="footer">
-  © 2026 Summer Camps Mountmellick
+  <a href="index.html" id="navLaptop">دليل المهاجرين في بورتلاويز</a>
 </footer>
 
 <!-- MAP MODAL -->
 <div id="mapModal" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeMap()">✖</span>
-    <iframe
-      src="https://www.google.com/maps?q=Mountmellick,Ireland&output=embed"
-      loading="lazy">
-    </iframe>
+    <iframe id="mapFrame" src="" loading="lazy"></iframe>
   </div>
 </div>
 
-<a href="index.html" id="navLaptop">دليل المهاجرين في بورتلاويز</a>
 <script>
   let currentLang = 'en';
 
@@ -190,7 +193,8 @@
       sport: "Sport",
       outdoor: "Outdoor",
       creative: "Creative",
-      location: "Location"
+      location: "Location",
+      map: "View Map"
     },
     ar: {
       title: "مخيمات الصيف في ماونتمليك",
@@ -199,28 +203,33 @@
       sport: "رياضة",
       outdoor: "أنشطة خارجية",
       creative: "إبداعي",
-      location: "الموقع"
+      location: "الموقع",
+      map: "عرض الخريطة"
     }
   };
 
   const camps = [
-    { name: { en: "Tennis Camp", ar: "معسكر التنس" }, location: { en: "Mountmellick", ar: "ماونتمليك" }, type: "sport", desc: { en: "Fun tennis training and games for ages 6–16.", ar: "تدريب ممتع على التنس وألعاب للأعمار 6-16." } },
-    { name: { en: "Community Sports Camp", ar: "معسكر الرياضة المجتمعي" }, location: { en: "Mountmellick", ar: "ماونتمليك" }, type: "sport", desc: { en: "Multi-sport activities and games.", ar: "أنشطة رياضية متنوعة وألعاب." } },
-    { name: { en: "Forest School", ar: "مدرسة الغابة" }, location: { en: "Laois", ar: "لاويس" }, type: "outdoor", desc: { en: "Nature play and outdoor learning.", ar: "اللعب في الطبيعة والتعلم في الهواء الطلق." } },
-    { name: { en: "Farm Camp", ar: "معسكر المزرعة" }, location: { en: "Laois", ar: "لاويس" }, type: "outdoor", desc: { en: "Animal interaction and outdoor fun.", ar: "التفاعل مع الحيوانات وأنشطة خارجية ممتعة." } },
-    { name: { en: "Adventure Camp", ar: "معسكر المغامرات" }, location: { en: "Midlands", ar: "الميدلاندز" }, type: "outdoor", desc: { en: "Kayaking and climbing activities.", ar: "أنشطة التجديف والتسلق." } },
-    { name: { en: "Campa Craic", ar: "كامبا كريك" }, location: { en: "Midlands", ar: "الميدلاندز" }, type: "creative", desc: { en: "Sports, arts, and games.", ar: "رياضة وفنون وألعاب." } },
+    { name: { en: "Tennis Camp", ar: "معسكر التنس" }, location: { en: "Mountmellick, Ireland", ar: "ماونتمليك، أيرلندا" }, type: "sport", desc: { en: "Fun tennis training and games for ages 6–16.", ar: "تدريب ممتع على التنس وألعاب للأعمار 6-16." } },
+    { name: { en: "Community Sports Camp", ar: "معسكر الرياضة المجتمعي" }, location: { en: "Mountmellick, Ireland", ar: "ماونتمليك، أيرلندا" }, type: "sport", desc: { en: "Multi-sport activities and games.", ar: "أنشطة رياضية متنوعة وألعاب." } },
+    { name: { en: "Forest School", ar: "مدرسة الغابة" }, location: { en: "Laois, Ireland", ar: "لاويس، أيرلندا" }, type: "outdoor", desc: { en: "Nature play and outdoor learning.", ar: "اللعب في الطبيعة والتعلم في الهواء الطلق." } },
+    { name: { en: "Farm Camp", ar: "معسكر المزرعة" }, location: { en: "Laois, Ireland", ar: "لاويس، أيرلندا" }, type: "outdoor", desc: { en: "Animal interaction and outdoor fun.", ar: "التفاعل مع الحيوانات وأنشطة خارجية ممتعة." } },
+    { name: { en: "Adventure Camp", ar: "معسكر المغامرات" }, location: { en: "Midlands, Ireland", ar: "الميدلاندز، أيرلندا" }, type: "outdoor", desc: { en: "Kayaking and climbing activities.", ar: "أنشطة التجديف والتسلق." } },
+    { name: { en: "Campa Craic", ar: "كامبا كريك" }, location: { en: "Midlands, Ireland", ar: "الميدلاندز، أيرلندا" }, type: "creative", desc: { en: "Sports, arts, and games.", ar: "رياضة وفنون وألعاب." } },
     { name: { en: "Starcamp", ar: "ستاركامب" }, location: { en: "Ireland", ar: "أيرلندا" }, type: "creative", desc: { en: "Singing, dancing, and drama.", ar: "غناء ورقص وتمثيل." } }
   ];
 
   const grid = document.getElementById("campGrid");
   const filter = document.getElementById("typeFilter");
+  const mapModal = document.getElementById("mapModal");
+  const mapFrame = document.getElementById("mapFrame");
 
   function displayCamps(type) {
     grid.innerHTML = "";
     const filtered = type === "all" ? camps : camps.filter(c => c.type === type);
 
     filtered.forEach(camp => {
+      const query = encodeURIComponent(camp.name.en + " " + camp.location.en);
+
       const card = document.createElement("div");
       card.className = "card";
 
@@ -229,10 +238,21 @@
         <p><strong>${translations[currentLang].location}:</strong> ${camp.location[currentLang]}</p>
         <p>${camp.desc[currentLang]}</p>
         <span class="tag">${translations[currentLang][camp.type]}</span>
+        <button class="map-btn" onclick="openMap('${query}')">${translations[currentLang].map}</button>
       `;
 
       grid.appendChild(card);
     });
+  }
+
+  function openMap(query) {
+    mapFrame.src = `https://www.google.com/maps?q=${query}&output=embed`;
+    mapModal.style.display = "block";
+  }
+
+  function closeMap() {
+    mapModal.style.display = "none";
+    mapFrame.src = "";
   }
 
   function setLanguage(lang) {
@@ -248,14 +268,6 @@
     filter.options[3].text = translations[lang].creative;
 
     displayCamps(filter.value);
-  }
-
-  function openMap() {
-    document.getElementById("mapModal").style.display = "block";
-  }
-
-  function closeMap() {
-    document.getElementById("mapModal").style.display = "none";
   }
 
   filter.addEventListener("change", () => {
