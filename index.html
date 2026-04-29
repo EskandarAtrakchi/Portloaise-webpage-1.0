@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>دليل المهاجرين في بورتلاويز</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f7fa;
+      color: #333;
+      transition: direction 0.3s;
+    }
+
+    header {
+      background: #2c3e50;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background: #34495e;
+    }
+
+    nav a {
+      color: white;
+      padding: 10px 15px;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      background: #1abc9c;
+    }
+
+    .lang-btn {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      padding: 8px 12px;
+      background: #1abc9c;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .container {
+      padding: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    footer {
+      text-align: center;
+      padding: 10px;
+      background: #2c3e50;
+      color: white;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 15px;
+      background: #1abc9c;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+      margin-top: 10px;
+    }
+
+    @media (min-width: 768px) {
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+
+<button class="lang-btn" onclick="toggleLanguage()">English</button>
+
+<header>
+  <h1 id="title">مرحباً بكم في بورتلاويز</h1>
+  <p id="subtitle">دليل المهاجرين العرب القادمين عبر الأمم المتحدة</p>
+</header>
+
+<nav>
+  <a href="#home" id="navHome">الرئيسية</a>
+  <a href="#services" id="navServices">الخدمات</a>
+  <a href="#transport" id="navTransport">المواصلات</a>
+  <a href="#education" id="navEducation">تعلم الإنجليزية</a>
+  <a href="#contact" id="navContact">اتصل بنا</a>
+</nav>
+
+<div class="container">
+
+  <section id="home" class="card">
+    <h2 id="homeTitle">معلومات عامة</h2>
+    <p id="homeText">
+      مرحباً بكم في بورتلاويز. هذه الصفحة تساعدكم على فهم الحياة اليومية،
+      الخدمات المتوفرة، وكيفية التأقلم في المجتمع.
+    </p>
+  </section>
+
+  <section id="services" class="grid">
+    <div class="card">
+      <h3 id="healthTitle">الرعاية الصحية</h3>
+      <p id="healthText">يمكنكم زيارة GP (طبيب عام) للحصول على العلاج. في الحالات الطارئة اتصلوا بـ 112 أو 999.</p>
+    </div>
+
+    <div class="card">
+      <h3 id="socialTitle">المساعدات الاجتماعية</h3>
+      <p id="socialText">يمكنكم التقديم للحصول على دعم من الحكومة عبر مكاتب الحماية الاجتماعية.</p>
+    </div>
+
+    <div class="card">
+      <h3 id="housingTitle">السكن</h3>
+      <p id="housingText">يتم توفير السكن من خلال برامج حكومية أو منظمات إنسانية.</p>
+    </div>
+  </section>
+
+  <section id="transport" class="card">
+    <h2 id="transportTitle">المواصلات</h2>
+    <p id="transportText">
+      يمكنكم استخدام الحافلات للتنقل داخل المدينة. يُنصح بتحميل تطبيقات النقل لمعرفة المواعيد.
+    </p>
+  </section>
+
+  <section id="education" class="card">
+    <h2 id="educationTitle">تعلم اللغة الإنجليزية</h2>
+    <p id="educationText">
+      تعلم اللغة الإنجليزية مهم جداً للاندماج والعمل.
+    </p>
+    <a class="btn" href="https://www.duolingo.com" target="_blank" id="learnBtn">
+      تعلم الإنجليزية مجاناً
+    </a>
+  </section>
+
+  <section class="card">
+    <h2 id="adaptTitle">كيف تتأقلم في بورتلاويز؟</h2>
+    <ul id="adaptList">
+      <li>تعرف على جيرانك وشارك في المجتمع</li>
+      <li>استخدم التطبيقات لمعرفة الأماكن والخدمات</li>
+      <li>تعلم أساسيات اللغة الإنجليزية</li>
+      <li>احترم القوانين المحلية</li>
+    </ul>
+  </section>
+
+  <section id="contact" class="card">
+    <h2 id="contactTitle">اتصل بنا</h2>
+    <p id="contactText">إذا كنتم بحاجة إلى مساعدة، يرجى التواصل مع المنظمات المحلية أو مراكز الدعم.</p>
+  </section>
+
+</div>
+
+<footer>
+  <p id="footerText">© 2026 دليل المهاجرين في بورتلاويز</p>
+</footer>
+
+<script>
+let isArabic = true;
+
+function toggleLanguage() {
+  isArabic = !isArabic;
+
+  if (!isArabic) {
+    document.documentElement.lang = "en";
+    document.documentElement.dir = "ltr";
+
+    document.querySelector('.lang-btn').innerText = "العربية";
+
+    document.getElementById('title').innerText = "Welcome to Portlaoise";
+    document.getElementById('subtitle').innerText = "Guide for migrants arriving through the UN";
+
+    document.getElementById('navHome').innerText = "Home";
+    document.getElementById('navServices').innerText = "Services";
+    document.getElementById('navTransport').innerText = "Transport";
+    document.getElementById('navEducation').innerText = "Learn English";
+    document.getElementById('navContact').innerText = "Contact";
+
+    document.getElementById('homeTitle').innerText = "General Information";
+    document.getElementById('homeText').innerText = "Welcome to Portlaoise. This page helps you understand daily life, services available, and how to adapt.";
+
+    document.getElementById('healthTitle').innerText = "Healthcare";
+    document.getElementById('healthText').innerText = "Visit a GP (doctor) for treatment. In emergencies call 112 or 999.";
+
+    document.getElementById('socialTitle').innerText = "Social Support";
+    document.getElementById('socialText').innerText = "You can apply for government support through social welfare offices.";
+
+    document.getElementById('housingTitle').innerText = "Housing";
+    document.getElementById('housingText').innerText = "Housing is provided through government or humanitarian programs.";
+
+    document.getElementById('transportTitle').innerText = "Transport";
+    document.getElementById('transportText').innerText = "You can use buses to travel. Use transport apps to check schedules.";
+
+    document.getElementById('educationTitle').innerText = "Learn English";
+    document.getElementById('educationText').innerText = "Learning English is very important for integration and work.";
+    document.getElementById('learnBtn').innerText = "Learn English for free";
+
+    document.getElementById('adaptTitle').innerText = "How to adapt in Portlaoise";
+    document.getElementById('adaptList').innerHTML = `
+      <li>Meet your neighbours and engage with the community</li>
+      <li>Use apps to find places and services</li>
+      <li>Learn basic English</li>
+      <li>Respect local laws</li>
+    `;
+
+    document.getElementById('contactTitle').innerText = "Contact";
+    document.getElementById('contactText').innerText = "If you need help, contact local organisations or support centres.";
+
+    document.getElementById('footerText').innerText = "© 2026 Migrant Guide in Portlaoise";
+
+  } else {
+    location.reload();
+  }
+}
+</script>
+
+</body>
+</html>
