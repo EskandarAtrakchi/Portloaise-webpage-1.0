@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>ESOL Resources</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f4f6f8;
+        margin: 0;
+        padding: 0;
+        transition: all 0.3s ease;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: auto;
+        padding: 30px;
+        background: white;
+        margin-top: 40px;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    p {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 10px 15px;
+        margin: 10px 5px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        background: #007bff;
+        color: white;
+        text-decoration: none;
+    }
+
+    .btn:hover {
+        background: #0056b3;
+    }
+
+    .top-bar {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .lang-btn {
+        background: #28a745;
+    }
+
+    .rtl {
+        direction: rtl;
+        text-align: right;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container" id="content">
+
+    <div class="top-bar">
+        <button class="btn lang-btn" onclick="toggleLanguage()">Translate English / العربية</button>
+    </div>
+
+    <h1 id="title">English Learning Resources</h1>
+
+    <p id="message">
+        Hi,<br><br>
+
+        There is a great Padlet resource with multiple useful links that we put together. I just found out about it this morning!
+        <br><br>
+
+        <a href="https://padlet.com/ThereseGlennonLOETB/english-online-resources-for-speakers-of-other-languages-vsvzvy34p1zqdras" target="_blank">
+            Click here to open Padlet resources
+        </a>
+    </p>
+
+    <h3 id="downloadsTitle">Download ESOL Documents</h3>
+
+    <!-- Replace href with your real file paths -->
+    <a class="btn" href="english-doc.pdf" download id="enDoc">
+        Download English Document
+    </a>
+
+    <a class="btn" href="arabic-doc.pdf" download id="arDoc">
+        تحميل الملف العربي
+    </a>
+<a href="index.html" id="navLaptop">دليل المهاجرين في بورتلاويز</a>
+</div>
+
+<script>
+let isArabic = false;
+
+function toggleLanguage() {
+    isArabic = !isArabic;
+
+    const body = document.body;
+    const title = document.getElementById("title");
+    const message = document.getElementById("message");
+    const downloadsTitle = document.getElementById("downloadsTitle");
+
+    if (isArabic) {
+        body.classList.add("rtl");
+
+        title.innerText = "موارد تعلم اللغة الإنجليزية";
+
+        message.innerHTML = `
+            مرحباً,<br><br>
+
+            هناك مورد رائع على Padlet يحتوي على العديد من الروابط المفيدة التي جمعتها!<br><br>
+
+            <a href="https://padlet.com/ThereseGlennonLOETB/english-online-resources-for-speakers-of-other-languages-vsvzvy34p1zqdras" target="_blank">
+                اضغط هنا لفتح الموارد
+            </a>
+        `;
+
+        downloadsTitle.innerText = "تحميل ملفات ESOL";
+
+    } else {
+        body.classList.remove("rtl");
+
+        title.innerText = "English Learning Resources";
+
+        message.innerHTML = `
+            Hi,<br><br>
+
+            There is a great Padlet resource with multiple useful links that we put together!
+            <br><br>
+
+            <a href="https://padlet.com/ThereseGlennonLOETB/english-online-resources-for-speakers-of-other-languages-vsvzvy34p1zqdras" target="_blank">
+                Click here to open Padlet resources
+            </a>
+        `;
+
+        downloadsTitle.innerText = "Download ESOL Documents";
+    }
+}
+</script>
+
+</body>
+</html>

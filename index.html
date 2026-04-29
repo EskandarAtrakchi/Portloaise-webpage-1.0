@@ -1,257 +1,269 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>دليل المهاجرين في بورتلاويز</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f5f7fa;
-      color: #333;
-      transition: direction 0.3s;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Portlaoise Guide</title>
 
-    header {
-      background: #2c3e50;
-      color: white;
-      padding: 15px;
-      text-align: center;
-    }
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+  }
 
+  header {
+    background: #2c3e50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+
+  /* NAVBAR */
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: #34495e;
+  }
+
+  nav a {
+    color: white;
+    padding: 12px 15px;
+    text-decoration: none;
+    display: block;
+  }
+
+  nav a:hover {
+    background: #1abc9c;
+  }
+
+  .container {
+    padding: 15px;
+    max-width: 900px;
+    margin: auto;
+  }
+
+  .card {
+    background: #f4f4f4;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 10px 15px;
+    background: #1abc9c;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+
+  /* LANGUAGE BUTTON */
+  .lang-btn {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    padding: 10px 15px;
+    border: none;
+    background: #1abc9c;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    z-index: 1000;
+  }
+
+  ul {
+    padding-left: 20px;
+  }
+
+  /* MOBILE */
+  @media (max-width: 600px) {
     nav {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      background: #34495e;
-    }
-
-    nav a {
-      color: white;
-      padding: 10px 15px;
-      text-decoration: none;
-    }
-
-    nav a:hover {
-      background: #1abc9c;
-    }
-
-    .lang-btn {
-      position: fixed;
-      top: 10px;
-      left: 10px;
-      padding: 8px 12px;
-      background: #1abc9c;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    .container {
-      padding: 20px;
-    }
-
-    .card {
-      background: white;
-      padding: 15px;
-      margin: 10px 0;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-
-    footer {
+      flex-direction: column;
       text-align: center;
-      padding: 10px;
-      background: #2c3e50;
-      color: white;
     }
-
-    .btn {
-      display: inline-block;
-      padding: 10px 15px;
-      background: #1abc9c;
-      color: white;
-      border-radius: 5px;
-      text-decoration: none;
-      margin-top: 10px;
-    }
-
-    @media (min-width: 768px) {
-      .grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-      }
-    }
-
-    @media (min-width: 1024px) {
-      .grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-  </style>
+  }
+</style>
 </head>
+
 <body>
 
 <button class="lang-btn" onclick="toggleLanguage()">English</button>
 
 <header>
   <h1 id="title">مرحباً بكم في بورتلاويز</h1>
-  <p id="subtitle">دليل المهاجرين العرب</p>
 </header>
 
+<!-- NAVBAR -->
 <nav>
-  <a href="SummerCamps.html" id="navHome">مخيمات الصيف</a>
-  <a href="#services" id="navServices">الخدمات</a>
-  <a href="#transport" id="navTransport">المواصلات</a>
-  <a href="#education" id="navEducation">تعلم الإنجليزية</a>
-  <a href="#contact" id="navContact">اتصل بنا</a>
+  <a href="#home" id="navHome">الرئيسية</a>
   <a href="instructions.html" id="navLaptop">استخدام الحاسوب</a>
+  <a href="LearningEnglish.html" id="navLearn">تعلم الإنجليزية</a>
+  <a href="SummerCamps.html" id="navCamps">مخيمات الصيف</a>
 </nav>
 
 <div class="container">
 
-  <section id="home" class="card">
-    <h2 id="homeTitle">معلومات عامة</h2>
-    <p id="homeText">
-      مرحباً بكم في بورتلاويز. هذه الصفحة تساعدكم على فهم الحياة اليومية،
-      الخدمات المتوفرة، وكيفية التأقلم في المجتمع.
-    </p>
-  </section>
+  <div class="card" id="home">
+    <h2 id="infoTitle">معلومات عامة</h2>
+    <p id="infoText">مرحباً بكم في بورتلاويز. هذا الدليل يساعدكم على فهم الحياة اليومية والخدمات المتوفرة.</p>
+  </div>
 
-  <section id="services" class="grid">
-    <div class="card">
-      <h3 id="healthTitle">الرعاية الصحية</h3>
-      <p id="healthText">يمكنكم زيارة GP (طبيب عام) للحصول على العلاج. في الحالات الطارئة اتصلوا بـ 112 أو 999.</p>
-    </div>
+  <div class="card">
+    <h2 id="healthTitle">الرعاية الصحية</h2>
+    <p id="healthText">زوروا الطبيب العام للعلاج. في الحالات الطارئة اتصلوا بـ 112 أو 999.</p>
+  </div>
 
-    <div class="card">
-      <h3 id="socialTitle">المساعدات الاجتماعية</h3>
-      <p id="socialText">يمكنكم التقديم للحصول على دعم من الحكومة عبر مكاتب الحماية الاجتماعية.</p>
-    </div>
-
-    <div class="card">
-      <h3 id="housingTitle">السكن</h3>
-      <p id="housingText">يتم توفير السكن من خلال برامج حكومية أو منظمات إنسانية.</p>
-    </div>
-  </section>
-
-  <section id="transport" class="card">
-    <h2 id="transportTitle">المواصلات</h2>
-    <p id="transportText">
-      يمكنكم استخدام الحافلات للتنقل داخل المدينة. يُنصح بتحميل تطبيقات النقل لمعرفة المواعيد.
-    </p>
-  </section>
-
-  <section id="education" class="card">
-    <h2 id="educationTitle">تعلم اللغة الإنجليزية</h2>
-    <p id="educationText">
-      تعلم اللغة الإنجليزية مهم جداً للاندماج والعمل.
-    </p>
-    <a class="btn" href="https://www.duolingo.com" target="_blank" id="learnBtn">
-      تعلم الإنجليزية مجاناً
+  <div class="card" id="learn">
+    <h2 id="learnTitle">تعلم الإنجليزية</h2>
+    <p id="learnText">تعلم اللغة الإنجليزية مهم للعمل والحياة اليومية.</p>
+    <a href="LearningEnglish.html" target="_blank" class="btn" id="startBtn">
+      Start Learning
     </a>
-  </section>
+  </div>
 
-  <section class="card">
-    <h2 id="adaptTitle">كيف تتأقلم في بورتلاويز؟</h2>
+  <div class="card">
+    <h2 id="adaptTitle">كيف تتأقلم</h2>
     <ul id="adaptList">
-      <li>تعرف على جيرانك وشارك في المجتمع</li>
-      <li>استخدم التطبيقات لمعرفة الأماكن والخدمات</li>
-      <li>تعلم أساسيات اللغة الإنجليزية</li>
-      <li>احترم القوانين المحلية</li>
+      <li>تعرف على جيرانك</li>
+      <li>استخدم التطبيقات المحلية</li>
+      <li>تدرب على الإنجليزية يومياً</li>
+      <li>احترم القوانين</li>
     </ul>
-  </section>
+  </div>
 
-  <section id="laptop" class="card">
-    <h2 id="laptopTitle">كيفية استخدام الحاسوب</h2>
-    <ul id="laptopList">
-      <li>تشغيل الحاسوب بالضغط على زر الطاقة</li>
-      <li>استخدام الفأرة لتحريك المؤشر والنقر</li>
-      <li>فتح الإنترنت باستخدام المتصفح (مثل Chrome)</li>
-      <li>استخدام لوحة المفاتيح للكتابة</li>
-      <li>إيقاف التشغيل من قائمة "Start"</li>
-      <a href="instructions.html" id="navLaptop">استخدام الحاسوب</a>
-    </ul>
-  </section>
+  <div class="card" id="laptop">
+    <h2 id="laptopTitle">استخدام الحاسوب</h2>
+    <p id="laptopText">
+      تشغيل الحاسوب، استخدام المتصفح، والكتابة باستخدام لوحة المفاتيح.
+    </p>
+  </div>
 
-  <section id="contact" class="card">
+  <div class="card">
     <h2 id="contactTitle">اتصل بنا</h2>
-    <p id="contactText">إذا كنتم بحاجة إلى مساعدة، يرجى التواصل مع المنظمات المحلية أو مراكز الدعم.</p>
-  </section>
+    <p id="contactText">تواصل مع مراكز الدعم المحلي عند الحاجة.</p>
+  </div>
 
 </div>
-
-<footer>
-  
-</footer>
 
 <script>
 let isArabic = true;
 
+const content = {
+  ar: {
+    title: "مرحباً بكم في بورتلاويز",
+    navHome: "الرئيسية",
+    navLaptop: "استخدام الحاسوب",
+    navLearn: "تعلم الإنجليزية",
+    navCamps: "مخيمات الصيف",
+
+    infoTitle: "معلومات عامة",
+    infoText: "مرحباً بكم في بورتلاويز. هذا الدليل يساعدكم على فهم الحياة اليومية والخدمات المتوفرة.",
+
+    healthTitle: "الرعاية الصحية",
+    healthText: "زوروا الطبيب العام للعلاج. في الحالات الطارئة اتصلوا بـ 112 أو 999.",
+
+    learnTitle: "تعلم الإنجليزية",
+    learnText: "تعلم اللغة الإنجليزية مهم للعمل والحياة اليومية.",
+    startBtn: "ابدأ التعلم",
+
+    adaptTitle: "كيف تتأقلم",
+    adaptList: [
+      "تعرف على جيرانك",
+      "استخدم التطبيقات المحلية",
+      "تدرب على الإنجليزية يومياً",
+      "احترم القوانين"
+    ],
+
+    laptopTitle: "استخدام الحاسوب",
+    laptopText: "تشغيل الحاسوب، استخدام المتصفح، والكتابة باستخدام لوحة المفاتيح.",
+
+    contactTitle: "اتصل بنا",
+    contactText: "تواصل مع مراكز الدعم المحلي عند الحاجة.",
+
+    btn: "English"
+  },
+
+  en: {
+    title: "Welcome to Portlaoise",
+    navHome: "Home",
+    navLaptop: "Computer Use",
+    navLearn: "Learn English",
+    navCamps: "Summer Camps",
+
+    infoTitle: "General Information",
+    infoText: "Welcome to Portlaoise. This guide helps you understand daily life and services.",
+
+    healthTitle: "Healthcare",
+    healthText: "Visit a GP for treatment. In emergencies call 112 or 999.",
+
+    learnTitle: "Learn English",
+    learnText: "Learning English is important for work and daily life.",
+    startBtn: "Start Learning",
+
+    adaptTitle: "How to Adapt",
+    adaptList: [
+      "Meet your neighbors",
+      "Use local apps",
+      "Practice English daily",
+      "Respect the laws"
+    ],
+
+    laptopTitle: "Computer Use",
+    laptopText: "Turning on the computer, using browser, and typing with keyboard.",
+
+    contactTitle: "Contact Us",
+    contactText: "Contact local support centers if you need help.",
+
+    btn: "عربي"
+  }
+};
+
 function toggleLanguage() {
   isArabic = !isArabic;
+  const lang = isArabic ? "ar" : "en";
 
-  if (!isArabic) {
-    document.documentElement.lang = "en";
-    document.documentElement.dir = "ltr";
+  document.documentElement.dir = isArabic ? "rtl" : "ltr";
 
-    document.querySelector('.lang-btn').innerText = "العربية";
+  const d = content[lang];
 
-    document.getElementById('title').innerText = "Welcome to Portlaoise";
-    document.getElementById('subtitle').innerText = "Guide for migrants";
+  document.getElementById("title").innerText = d.title;
 
-    document.getElementById('navHome').innerText = "Summer Camps";
-    document.getElementById('navServices').innerText = "Services";
-    document.getElementById('navTransport').innerText = "Transport";
-    document.getElementById('navEducation').innerText = "Learn English";
-    document.getElementById('navContact').innerText = "Contact";
-    document.getElementById('navLaptop').innerText = "Using a Laptop";
+  document.getElementById("navHome").innerText = d.navHome;
+  document.getElementById("navLaptop").innerText = d.navLaptop;
+  document.getElementById("navLearn").innerText = d.navLearn;
+  document.getElementById("navCamps").innerText = d.navCamps;
 
-    document.getElementById('homeTitle').innerText = "General Information";
-    document.getElementById('homeText').innerText = "Welcome to Portlaoise. This page helps you understand daily life, services available, and how to adapt.";
+  document.getElementById("infoTitle").innerText = d.infoTitle;
+  document.getElementById("infoText").innerText = d.infoText;
 
-    document.getElementById('healthTitle').innerText = "Healthcare";
-    document.getElementById('healthText').innerText = "Visit a GP (doctor) for treatment. In emergencies call 112 or 999.";
+  document.getElementById("healthTitle").innerText = d.healthTitle;
+  document.getElementById("healthText").innerText = d.healthText;
 
-    document.getElementById('socialTitle').innerText = "Social Support";
-    document.getElementById('socialText').innerText = "You can apply for government support through social welfare offices.";
+  document.getElementById("learnTitle").innerText = d.learnTitle;
+  document.getElementById("learnText").innerText = d.learnText;
+  document.getElementById("startBtn").innerText = d.startBtn;
 
-    document.getElementById('housingTitle').innerText = "Housing";
-    document.getElementById('housingText').innerText = "Housing is provided through government or humanitarian programs.";
+  document.getElementById("adaptTitle").innerText = d.adaptTitle;
 
-    document.getElementById('transportTitle').innerText = "Transport";
-    document.getElementById('transportText').innerText = "You can use buses to travel. Use transport apps to check schedules.";
+  const list = document.getElementById("adaptList");
+  list.innerHTML = "";
+  d.adaptList.forEach(i => {
+    const li = document.createElement("li");
+    li.innerText = i;
+    list.appendChild(li);
+  });
 
-    document.getElementById('educationTitle').innerText = "Learn English";
-    document.getElementById('educationText').innerText = "Learning English is very important for integration and work.";
-    document.getElementById('learnBtn').innerText = "Learn English for free";
+  document.getElementById("laptopTitle").innerText = d.laptopTitle;
+  document.getElementById("laptopText").innerText = d.laptopText;
 
-    document.getElementById('adaptTitle').innerText = "How to adapt in Portlaoise";
-    document.getElementById('adaptList').innerHTML = `
-      <li>Meet your neighbours and engage with the community</li>
-      <li>Use apps to find places and services</li>
-      <li>Learn basic English</li>
-      <li>Respect local laws</li>
-    `;
+  document.getElementById("contactTitle").innerText = d.contactTitle;
+  document.getElementById("contactText").innerText = d.contactText;
 
-    document.getElementById('laptopTitle').innerText = "How to use a laptop";
-    document.getElementById('laptopList').innerHTML = `
-      <li>Turn on the laptop by pressing the power button</li>
-      <li>Use the mouse or touchpad to move the cursor</li>
-      <li>Open the internet using a browser (like Chrome)</li>
-      <li>Use the keyboard to type</li>
-      <li>Shut down from the Start menu</li>
-    `;
-
-    document.getElementById('contactTitle').innerText = "Contact";
-    document.getElementById('contactText').innerText = "If you need help, contact local organisations or support centres.";
-
-  } else {
-    location.reload();
-  }
+  document.querySelector(".lang-btn").innerText = d.btn;
 }
 </script>
 
