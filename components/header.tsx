@@ -24,7 +24,6 @@ export function Header() {
     { href: "/", label: t("nav.home"), icon: Home },
     { href: "/laptop-guide", label: t("nav.laptop"), icon: Laptop },
     { href: "/learn-english", label: t("nav.learn"), icon: BookOpen },
-    { href: "/summer-camps", label: t("nav.camps"), icon: Tent },
   ]
 
   const toggleLanguage = () => {
