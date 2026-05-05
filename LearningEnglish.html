@@ -11,11 +11,10 @@
         background: #f4f6f8;
         margin: 0;
         padding: 0;
-        transition: all 0.3s ease;
     }
 
     .container {
-        max-width: 800px;
+        max-width: 900px;
         margin: auto;
         padding: 30px;
         background: white;
@@ -28,9 +27,32 @@
         text-align: center;
     }
 
-    p {
-        font-size: 16px;
-        line-height: 1.6;
+    .tabs {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+        gap: 10px;
+    }
+
+    .tab-btn {
+        padding: 10px 15px;
+        border: none;
+        cursor: pointer;
+        background: #ddd;
+        border-radius: 6px;
+    }
+
+    .tab-btn.active {
+        background: #007bff;
+        color: white;
+    }
+
+    .tab-content {
+        display: none;
+    }
+
+    .tab-content.active {
+        display: block;
     }
 
     .btn {
@@ -62,6 +84,13 @@
         direction: rtl;
         text-align: right;
     }
+
+    iframe {
+        width: 100%;
+        height: 600px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+    }
 </style>
 </head>
 
@@ -73,30 +102,55 @@
         <button class="btn lang-btn" onclick="toggleLanguage()">Translate English / العربية</button>
     </div>
 
-    <h1 id="title">English Learning Resources</h1>
+    <!-- Tabs -->
+    <div class="tabs">
+        <button class="tab-btn active" onclick="openTab('resources')">Resources</button>
+        <button class="tab-btn" onclick="openTab('transparent')">Transparent Language</button>
+    </div>
 
-    <p id="message">
-        Hi,<br><br>
+    <!-- TAB 1 -->
+    <div id="resources" class="tab-content active">
+        <h1 id="title">English Learning Resources</h1>
 
-        There is a great Padlet resource with multiple useful links that we put together. I just found out about it this morning!
-        <br><br>
+        <p id="message">
+            Hi,<br><br>
+            There is a great Padlet resource with multiple useful links.<br><br>
 
-        <a href="https://padlet.com/ThereseGlennonLOETB/english-online-resources-for-speakers-of-other-languages-vsvzvy34p1zqdras" target="_blank">
-            Click here to open Padlet resources
+            <a href="https://padlet.com/ThereseGlennonLOETB/english-online-resources-for-speakers-of-other-languages-vsvzvy34p1zqdras" target="_blank">
+                Click here to open Padlet resources
+            </a>
+        </p>
+
+        <h3 id="downloadsTitle">Download ESOL Documents</h3>
+
+        <a class="btn" href="https://github.com/EskandarAtrakchi/Portloaise-webpage-1.0/blob/main/Online%20ESOL%20classes%20and%20resources%20July%202024.pdf" download id="enDoc">
+            Download English Document
         </a>
-    </p>
 
-    <h3 id="downloadsTitle">Download ESOL Documents</h3>
+        <a class="btn" href="https://github.com/EskandarAtrakchi/Portloaise-webpage-1.0/blob/main/Arabic%20version.pdf" download id="arDoc">
+            تحميل الملف العربي
+        </a>
+    </div>
 
-    <!-- Replace href with your real file paths -->
-    <a class="btn" href="https://github.com/EskandarAtrakchi/Portloaise-webpage-1.0/blob/main/Online%20ESOL%20classes%20and%20resources%20July%202024.pdf" download id="enDoc">
-        Download English Document
-    </a>
+    <!-- TAB 2 -->
+    <div id="transparent" class="tab-content">
+        <h1>Transparent Language Online</h1>
 
-    <a class="btn" href="https://github.com/EskandarAtrakchi/Portloaise-webpage-1.0/blob/main/Arabic%20version.pdf" download id="arDoc">
-        تحميل الملف العربي
-    </a>
-<a href="index.html" id="navLaptop">دليل المهاجرين في بورتلاويز</a>
+        <p>
+            Access interactive language learning platform:
+        </p>
+
+        <!-- iframe (may be blocked by site) -->
+        <iframe src="https://library.transparent.com/lgma/game/ng/#/login?continue=https:~2F~2Flibrary.transparent.com~2Flgma~2Fgame~2Fng~2F%23~2Fenroll%3Fcode%3Dlaoisco"></iframe>
+
+        <br>
+
+        <!-- fallback button -->
+        <a class="btn" href="https://library.transparent.com/lgma/game/ng/#/login?continue=https:~2F~2Flibrary.transparent.com~2Flgma~2Fgame~2Fng~2F%23~2Fenroll%3Fcode%3Dlaoisco" target="_blank">
+            Open in New Tab
+        </a>
+    </div>
+
 </div>
 
 <script>
@@ -104,49 +158,77 @@ let isArabic = false;
 
 function toggleLanguage() {
     isArabic = !isArabic;
-
     const body = document.body;
+
     const title = document.getElementById("title");
     const message = document.getElementById("message");
     const downloadsTitle = document.getElementById("downloadsTitle");
 
+    const transparentTitle = document.querySelector("#transparent h1");
+    const transparentText = document.querySelector("#transparent p");
+
     if (isArabic) {
         body.classList.add("rtl");
 
-        title.innerText = "موارد تعلم اللغة الإنجليزية";
+        // Resources tab
+        if (title) title.innerText = "موارد تعلم اللغة الإنجليزية";
 
-        message.innerHTML = `
-            مرحباً,<br><br>
+        if (message) {
+            message.innerHTML = `
+                مرحباً,<br><br>
+                هناك مورد رائع يحتوي على روابط مفيدة.<br><br>
+                <a href="https://padlet.com/ThereseGlennonLOETB/english-online-resources-for-speakers-of-other-languages-vsvzvy34p1zqdras" target="_blank">
+                    اضغط هنا لفتح الموارد
+                </a>
+            `;
+        }
 
-            هناك مورد رائع على Padlet يحتوي على العديد من الروابط المفيدة التي جمعتها!<br><br>
+        if (downloadsTitle) downloadsTitle.innerText = "تحميل ملفات ESOL";
 
-            <a href="https://padlet.com/ThereseGlennonLOETB/english-online-resources-for-speakers-of-other-languages-vsvzvy34p1zqdras" target="_blank">
-                اضغط هنا لفتح الموارد
-            </a>
-        `;
-
-        downloadsTitle.innerText = "تحميل ملفات ESOL";
+        // Transparent tab
+        if (transparentTitle) transparentTitle.innerText = "منصة تعلم اللغة";
+        if (transparentText) transparentText.innerText = "استخدم المنصة التفاعلية لتعلم اللغة:";
 
     } else {
         body.classList.remove("rtl");
 
-        title.innerText = "English Learning Resources";
+        // Resources tab
+        if (title) title.innerText = "English Learning Resources";
 
-        message.innerHTML = `
-            Hi,<br><br>
+        if (message) {
+            message.innerHTML = `
+                Hi,<br><br>
+                There is a great Padlet resource with multiple useful links.<br><br>
+                <a href="https://padlet.com/ThereseGlennonLOETB/english-online-resources-for-speakers-of-other-languages-vsvzvy34p1zqdras" target="_blank">
+                    Click here to open Padlet resources
+                </a>
+            `;
+        }
 
-            There is a great Padlet resource with multiple useful links that we put together!
-            <br><br>
+        if (downloadsTitle) downloadsTitle.innerText = "Download ESOL Documents";
 
-            <a href="https://padlet.com/ThereseGlennonLOETB/english-online-resources-for-speakers-of-other-languages-vsvzvy34p1zqdras" target="_blank">
-                Click here to open Padlet resources
-            </a>
-        `;
-
-        downloadsTitle.innerText = "Download ESOL Documents";
+        // Transparent tab
+        if (transparentTitle) transparentTitle.innerText = "Transparent Language Online";
+        if (transparentText) transparentText.innerText = "Access interactive language learning platform:";
     }
 }
+
+// FIXED TAB FUNCTION (important!)
+function openTab(tabId) {
+    const tabs = document.querySelectorAll(".tab-content");
+    const buttons = document.querySelectorAll(".tab-btn");
+
+    tabs.forEach(tab => tab.classList.remove("active"));
+    buttons.forEach(btn => btn.classList.remove("active"));
+
+    document.getElementById(tabId).classList.add("active");
+
+    // 🔥 FIX: pass event properly
+    const clickedBtn = event.currentTarget;
+    if (clickedBtn) clickedBtn.classList.add("active");
+}
 </script>
+
 
 </body>
 </html>
