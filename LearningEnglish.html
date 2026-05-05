@@ -134,22 +134,39 @@
 
     <!-- TAB 2 -->
     <div id="transparent" class="tab-content">
-        <h1>Transparent Language Online</h1>
+        <div class="iframe-card">
 
-        <p>
-            Access interactive language learning platform:
-        </p>
+            <h1 id="transparentTitle">Transparent Language Online</h1>
 
-        <!-- iframe (may be blocked by site) -->
-        <iframe src="https://library.transparent.com/lgma/game/ng/#/login?continue=https:~2F~2Flibrary.transparent.com~2Flgma~2Fgame~2Fng~2F%23~2Fenroll%3Fcode%3Dlaoisco"></iframe>
+            <p id="transparentText">
+                Access interactive language learning platform:
+            </p>
 
-        <br>
+            <div class="iframe-wrapper">
 
-        <!-- fallback button -->
-        <a class="btn" href="https://library.transparent.com/lgma/game/ng/#/login?continue=https:~2F~2Flibrary.transparent.com~2Flgma~2Fgame~2Fng~2F%23~2Fenroll%3Fcode%3Dlaoisco" target="_blank">
-            Open in New Tab
-        </a>
+                <!-- Loading message -->
+                <div class="iframe-overlay" id="iframeOverlay">
+                    <p>Loading platform...</p>
+
+                    <a class="btn" 
+                    href="https://library.transparent.com/lgma/game/ng/#/login?continue=https:~2F~2Flibrary.transparent.com~2Flgma~2Fgame~2Fng~2F%23~2Fenroll%3Fcode%3Dlaoisco" 
+                    target="_blank">
+                    Open Platform in New Tab
+                    </a>
+                </div>
+
+                <!-- iframe -->
+                <iframe 
+                    id="transparentFrame"
+                    src="https://library.transparent.com/lgma/game/ng/#/login?continue=https:~2F~2Flibrary.transparent.com~2Flgma~2Fgame~2Fng~2F%23~2Fenroll%3Fcode%3Dlaoisco"
+                    onload="hideOverlay()">
+                </iframe>
+
+            </div>
+
+        </div>
     </div>
+
 
 </div>
 
