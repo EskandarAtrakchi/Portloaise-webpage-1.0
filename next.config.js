@@ -1,15 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  typescript: {
-    ignoreBuildErrors: true,
-  },
+  output: 'export',
+  basePath: '/Portloaise-webpage-1.0',
+  assetPrefix: '/Portloaise-webpage-1.0/',
   images: {
     unoptimized: true,
   },
-}
-module.exports = {
-  output: 'export',
 };
 
+export default nextConfig;
 
-export default nextConfig
