@@ -21,8 +21,8 @@ function LayoutWrapper({ children }: { children: ReactNode }) {
       <footer className="border-t border-border/40 py-6 text-center text-sm text-muted-foreground">
         <div className="container mx-auto px-4">
           {isRTL 
-            ? "© 2024 دليل بورتلاويز. جميع الحقوق محفوظة."
-            : "© 2024 Portlaoise Guide. All rights reserved."
+            ? "© دليل بورتلاويز."
+            : "© rights reserved."
           }
         </div>
       </footer>
