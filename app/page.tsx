@@ -102,6 +102,22 @@ export default function HomePage() {
               </Link>
             </Button>
           </CardContent>
+          <CardContent>
+            <Button asChild className="w-full gap-2">
+              <Link href="https://github.com/EskandarAtrakchi/Portloaise-webpage-1.0/raw/refs/heads/main/Welcome%20to%20Laois%20Arabic%20version.docx">
+                {t("home.learn.btn")}
+                <ArrowRight className={`h-4 w-4 ${isRTL ? "rotate-180" : ""}`} />
+              </Link>
+            </Button>
+          </CardContent>
+          <CardContent>
+            <Button asChild className="w-full gap-2">
+              <Link href="https://github.com/EskandarAtrakchi/Portloaise-webpage-1.0/raw/refs/heads/main/Welcome%20to%20Laois%20Booklet%20(EN)%20FINAL%20VERSION.docx">
+                {t("home.learn.btn")}
+                <ArrowRight className={`h-4 w-4 ${isRTL ? "rotate-180" : ""}`} />
+              </Link>
+            </Button>
+          </CardContent>
         </Card>
 
         {/* Adaptation Tips */}
