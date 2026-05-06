@@ -24,6 +24,7 @@ export function Header() {
     { href: "/", label: t("nav.home"), icon: Home },
     { href: "/laptop-guide", label: t("nav.laptop"), icon: Laptop },
     { href: "/learn-english", label: t("nav.learn"), icon: BookOpen },
+    { href: "/summer-camps", label: t("nav.camps"), icon: Tent },
   ]
 
   const toggleLanguage = () => {
@@ -35,10 +36,10 @@ export function Header() {
       <div className="container flex h-16 items-center justify-between px-4 mx-auto max-w-6xl">
         <Link href="/" className="flex items-center gap-2">
           <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary text-primary-foreground font-bold">
-            P
+            L
           </div>
           <span className="font-semibold text-lg hidden sm:inline-block">
-            {language === "en" ? "Laois Guide" : "دليل بورتلاويز"}
+            {language === "en" ? "Laois Guide" : "دليل لاويز"}
           </span>
         </Link>
 

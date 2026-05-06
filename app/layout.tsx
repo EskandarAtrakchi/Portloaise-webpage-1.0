@@ -15,9 +15,10 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Laoise Guide - Welcome to Ireland',
-  description: 'A comprehensive guide for immigrants in Laoise, Ireland. Learn English, find resources, and adapt to life in Ireland.',
-  keywords: ['Laoise', 'Ireland', 'immigrants', 'ESOL', 'English learning', 'community guide'],
+  title: 'Portlaoise Guide - Welcome to Ireland',
+  description: 'A comprehensive guide for immigrants in Portlaoise, Ireland. Learn English, find resources, and adapt to life in Ireland.',
+  generator: 'v0.app',
+  keywords: ['Portlaoise', 'Ireland', 'immigrants', 'ESOL', 'English learning', 'community guide'],
   icons: {
     icon: [
       {
