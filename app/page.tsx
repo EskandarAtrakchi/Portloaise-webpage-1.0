@@ -52,7 +52,7 @@ export default function HomePage() {
               {t("nav.laptop")}
             </Link>
           </Button>
-        </div>
+        </div> 
       </section>
 
       {/* Cards Grid */}

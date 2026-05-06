@@ -20,10 +20,10 @@ const translations: Record<Language, Record<string, string>> = {
     "nav.camps": "Summer Camps",
     
     // Home page
-    "home.title": "Welcome to Portlaoise",
+    "home.title": "Welcome to Laois",
     "home.subtitle": "Your guide to life in Ireland",
     "home.info.title": "General Information",
-    "home.info.text": "Welcome to Portlaoise. This guide helps you understand daily life and services available to you.",
+    "home.info.text": "Welcome to Laois. This guide helps you understand daily life and services available to you.",
     "home.health.title": "Healthcare",
     "home.health.text": "Visit a GP for treatment. In emergencies call 112 or 999.",
     "home.learn.title": "Learn English",

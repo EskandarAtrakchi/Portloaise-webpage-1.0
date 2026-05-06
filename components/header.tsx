@@ -38,7 +38,7 @@ export function Header() {
             P
           </div>
           <span className="font-semibold text-lg hidden sm:inline-block">
-            {language === "en" ? "Portlaoise Guide" : "دليل بورتلاويز"}
+            {language === "en" ? "Laois Guide" : "دليل بورتلاويز"}
           </span>
         </Link>
 
