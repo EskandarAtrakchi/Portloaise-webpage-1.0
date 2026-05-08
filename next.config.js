@@ -1,4 +1,3 @@
-/** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
   basePath: '/Portloaise-webpage-1.0',
@@ -9,4 +8,3 @@ const nextConfig = {
 };
 
 export default nextConfig;
-
