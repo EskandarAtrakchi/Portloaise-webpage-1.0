@@ -12,7 +12,8 @@ import {
   ArrowRight,
   Sparkles,
   Download,
-  FileText
+  FileText,
+  ExternalLink
 } from "lucide-react"
 
 export default function HomePage() {
@@ -56,10 +57,25 @@ export default function HomePage() {
             <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
               <Users className="h-6 w-6 text-primary" />
             </div>
+
             <CardTitle>{t("home.info.title")}</CardTitle>
+
             <CardDescription className="text-base">
               {t("home.info.text")}
             </CardDescription>
+
+            <div className="pt-4">
+              <Button asChild>
+                <a
+                  href="https://www.citizensinformation.ie/en/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {t("home.citizenInformation")}
+                  <ExternalLink className="ml-2 h-4 w-4" />
+                </a>
+              </Button>
+            </div>
           </CardHeader>
         </Card>
 
